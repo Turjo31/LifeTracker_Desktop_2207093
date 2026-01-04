@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.turjo2207093.lifetracker.SignupController">
+    <padding>
+        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+    </padding>
+    <children>
+        <Label text="Create Account" textFill="#2E7D32">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Label>
+        <VBox maxWidth="300.0" spacing="10.0">
+            <children>
+                <Label text="Username" />
+                <TextField fx:id="usernameField" promptText="Choose a username" />
+                <Label text="Email" />
+                <TextField fx:id="emailField" promptText="Enter your email" />
+                <Label text="Password" />
+                <PasswordField fx:id="passwordField" promptText="Create a password" />
+                <Label text="Confirm Password" />
+                <PasswordField fx:id="confirmPasswordField" promptText="Repeat your password" />
+            </children>
+        </VBox>
+        <Button onAction="#onSignupClick" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5;" text="Sign Up">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Hyperlink onAction="#onLoginLinkClick" text="Already have an account? Login" textFill="#2E7D32" />
+        <Button onAction="#onBackClick" style="-fx-background-color: transparent;" text="Back to Home" textFill="#666666" />
+    </children>
+</VBox>

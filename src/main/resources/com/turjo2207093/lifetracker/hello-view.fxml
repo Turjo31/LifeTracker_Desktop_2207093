@@ -11,7 +11,7 @@
         <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
     </padding>
    <children>
-      <Label text="LifeTracker" textFill="#6200ee">
+      <Label text="LifeTracker" textFill="#2E7D32">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -23,12 +23,12 @@
       </Label>
       <VBox alignment="CENTER" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#onUserLoginClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #6200EE; -fx-text-fill: white; -fx-background-radius: 5;" text="User">
+            <Button onAction="#onUserLoginClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5;" text="User Login">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onAdminLoginClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #6200EE; -fx-border-radius: 5; -fx-text-fill: #6200EE;" text="Admin">
+            <Button onAction="#onAdminLoginClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #4CAF50; -fx-border-radius: 5; -fx-text-fill: #4CAF50;" text="Admin Login">
                <font>
                   <Font size="16.0" />
                </font>
