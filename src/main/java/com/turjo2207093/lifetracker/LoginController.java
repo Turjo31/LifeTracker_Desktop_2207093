@@ -20,10 +20,13 @@ public class LoginController {
     private PasswordField passwordField;
 
     @FXML
-    protected void onLoginClick() {
+    protected void onLoginClick(ActionEvent event) throws IOException {
         String username = usernameField.getText();
         String password = passwordField.getText();
         System.out.println("Attempting login for: " + username);
+        
+        // For now, directly navigate to dashboard
+        switchScene(event, "user-dashboard-view.fxml");
     }
 
     @FXML
