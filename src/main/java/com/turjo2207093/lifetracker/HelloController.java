@@ -18,7 +18,7 @@ public class HelloController {
 
     @FXML
     protected void onAdminLoginClick(ActionEvent event) throws IOException {
-        switchScene(event, "login-view.fxml");
+        switchScene(event, "admin-dashboard-view.fxml");
     }
 
     private void switchScene(ActionEvent event, String fxmlFile) throws IOException {
