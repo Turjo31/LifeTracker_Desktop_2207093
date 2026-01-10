@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class DatabaseHandler {
 
@@ -24,9 +25,18 @@ public class DatabaseHandler {
                     "email TEXT," +
                     "level INTEGER DEFAULT 1," +
                     "xp INTEGER DEFAULT 0," +
-                    "is_admin INTEGER DEFAULT 0" +
+                    "is_admin INTEGER DEFAULT 0," +
+                    "full_name TEXT," +
+                    "age TEXT," +
+                    "gender TEXT," +
+                    "diary_entry TEXT" +
                     ")";
             stmt.execute(createUsersTable);
+
+            addColumnIfNotExists(stmt, "users", "full_name", "TEXT");
+            addColumnIfNotExists(stmt, "users", "age", "TEXT");
+            addColumnIfNotExists(stmt, "users", "gender", "TEXT");
+            addColumnIfNotExists(stmt, "users", "diary_entry", "TEXT");
 
             String createHabitsTable = "CREATE TABLE IF NOT EXISTS habits (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -38,10 +48,26 @@ public class DatabaseHandler {
                     ")";
             stmt.execute(createHabitsTable);
 
-            System.out.println("Database initialized.");
-
         } catch (SQLException e) {
-            System.err.println("Error initializing database: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static void addColumnIfNotExists(Statement stmt, String tableName, String columnName, String columnType) {
+        try {
+            ResultSet rs = stmt.executeQuery("PRAGMA table_info(" + tableName + ")");
+            boolean columnExists = false;
+            while (rs.next()) {
+                if (rs.getString("name").equals(columnName)) {
+                    columnExists = true;
+                    break;
+                }
+            }
+            if (!columnExists) {
+                stmt.execute("ALTER TABLE " + tableName + " ADD COLUMN " + columnName + " " + columnType);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

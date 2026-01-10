@@ -60,7 +60,7 @@ public class AdminDashboardController {
                 users.add(rs.getString("username"));
             }
         } catch (SQLException e) {
-            System.err.println("Error loading users: " + e.getMessage());
+            e.printStackTrace();
         }
         
         if (users.isEmpty()) {
@@ -78,10 +78,9 @@ public class AdminDashboardController {
                 
                 pstmt.setString(1, selectedUser);
                 pstmt.executeUpdate();
-                System.out.println("Reset progress for user: " + selectedUser);
                 
             } catch (SQLException e) {
-                System.err.println("Error resetting progress: " + e.getMessage());
+                e.printStackTrace();
             }
         }
     }
@@ -96,11 +95,10 @@ public class AdminDashboardController {
                 
                 pstmt.setString(1, selectedUser);
                 pstmt.executeUpdate();
-                System.out.println("Deleted user: " + selectedUser);
                 loadUsers();
                 
             } catch (SQLException e) {
-                System.err.println("Error deleting user: " + e.getMessage());
+                e.printStackTrace();
             }
         }
     }
