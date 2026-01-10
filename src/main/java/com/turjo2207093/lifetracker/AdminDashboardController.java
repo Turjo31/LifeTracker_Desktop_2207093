@@ -63,7 +63,6 @@ public class AdminDashboardController {
             System.err.println("Error loading users: " + e.getMessage());
         }
         
-        // Add dummy data if DB is empty for demonstration
         if (users.isEmpty()) {
             users.addAll("john_doe", "jane_smith", "habit_master");
         }
@@ -98,7 +97,7 @@ public class AdminDashboardController {
                 pstmt.setString(1, selectedUser);
                 pstmt.executeUpdate();
                 System.out.println("Deleted user: " + selectedUser);
-                loadUsers(); // Refresh list
+                loadUsers();
                 
             } catch (SQLException e) {
                 System.err.println("Error deleting user: " + e.getMessage());

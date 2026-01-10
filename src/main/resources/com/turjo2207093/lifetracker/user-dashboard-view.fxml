@@ -19,8 +19,9 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
+                  <Button onAction="#onProfileClick" style="-fx-background-color: white; -fx-text-fill: #4CAF50; -fx-background-radius: 5;" text="My Profile" />
                   <Button onAction="#onLogoutClick" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: white; -fx-border-radius: 5;" text="Logout" />
                </children>
             </HBox>

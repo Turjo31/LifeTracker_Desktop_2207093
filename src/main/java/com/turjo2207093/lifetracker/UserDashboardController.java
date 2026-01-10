@@ -46,6 +46,11 @@ public class UserDashboardController {
     }
 
     @FXML
+    protected void onProfileClick(ActionEvent event) throws IOException {
+        switchScene(event, "user-profile-view.fxml");
+    }
+
+    @FXML
     protected void onAddHabitClick() {
         Dialog<Habit> dialog = new Dialog<>();
         dialog.setTitle("Add New Habit");

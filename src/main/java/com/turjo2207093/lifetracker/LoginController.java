@@ -25,7 +25,6 @@ public class LoginController {
         String password = passwordField.getText();
         System.out.println("Attempting login for: " + username);
         
-
         switchScene(event, "user-dashboard-view.fxml");
     }
 
