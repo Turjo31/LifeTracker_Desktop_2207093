@@ -10,6 +10,7 @@ module com.turjo2207093.lifetracker {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
 
     opens com.turjo2207093.lifetracker to javafx.fxml;
     exports com.turjo2207093.lifetracker;

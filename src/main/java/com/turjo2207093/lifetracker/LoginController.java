@@ -25,7 +25,7 @@ public class LoginController {
         String password = passwordField.getText();
         System.out.println("Attempting login for: " + username);
         
-        // For now, directly navigate to dashboard
+
         switchScene(event, "user-dashboard-view.fxml");
     }
 
