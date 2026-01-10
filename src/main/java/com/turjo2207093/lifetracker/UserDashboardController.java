@@ -75,6 +75,11 @@ public class UserDashboardController {
     }
 
     @FXML
+    protected void onLeaderboardClick(ActionEvent event) throws IOException {
+        switchScene(event, "leaderboard-view.fxml");
+    }
+
+    @FXML
     protected void onAddHabitClick() {
         Dialog<Habit> dialog = new Dialog<>();
         dialog.setTitle("Add New Habit");
